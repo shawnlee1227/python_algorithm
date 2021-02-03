@@ -1,3 +1,6 @@
+import collections
+
+
 class Palindrome:
 
     def isPalindrome(self, s: str) -> bool:
@@ -10,11 +13,26 @@ class Palindrome:
             if strs.pop(0) != strs.pop():
                 return False
         return True
+    
+    def isPalindromeDeque(self, s: str) -> bool:
+        strs = collections.deque()
+
+        for char in s:
+            if char.isalnum():
+                strs.append(char.lower())
+        
+        while len(strs) > 1:
+            if strs.popleft() != strs.pop():
+                return False
+        return True
 
     # test
     def testPalindrome(self, s: str):
         answer = self.isPalindrome(s)
-        print(f"Is '{s}' a valid palindrome?\n{answer}")
+        answerDeque = self.isPalindromeDeque(s)
+        print(f"""Is '{s}' a valid palindrome?
+            List: {answer}
+            Deque: {answerDeque}""")
 
 
 p = Palindrome()
