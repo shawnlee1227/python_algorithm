@@ -1,4 +1,5 @@
 import collections
+import re
 
 
 class Palindrome:
@@ -25,14 +26,24 @@ class Palindrome:
             if strs.popleft() != strs.pop():
                 return False
         return True
+    
+    def isPlaindromeSlice(slef, s: str) -> bool:
+        strs = s.lower()
+
+        # search pattern and replace
+        strs = re.sub('[^a-z0-9]', '', strs)
+
+        return strs == strs[::-1]
 
     # test
     def testPalindrome(self, s: str):
         answer = self.isPalindrome(s)
         answerDeque = self.isPalindromeDeque(s)
+        answerSlice = self.isPlaindromeSlice(s)
         print(f"""Is '{s}' a valid palindrome?
             List: {answer}
-            Deque: {answerDeque}""")
+            Deque: {answerDeque}
+            Slice: {answerSlice}""")
 
 
 p = Palindrome()
