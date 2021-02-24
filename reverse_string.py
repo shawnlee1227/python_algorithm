@@ -6,6 +6,12 @@ def reverseStringTwoPointer(s: list[str]) -> None:
         last -= 1
     print(s)
 
+def reverseStringPythonic(s: list[str]) -> None:
+    s.reverse()
+    print(s)
 
-l = ['h','e','l','l','o']
-reverseStringTwoPointer(l)
+
+l1 = ['h','e','l','l','o']
+l2 = ['w','o','r','l','d']
+reverseStringTwoPointer(l1)
+reverseStringPythonic(l2)
