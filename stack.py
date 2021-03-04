@@ -20,12 +20,13 @@ class Stack:
         return self.items
 
 
-myStack = Stack()
-myStack.push("CEA")
-myStack.push("PLB")
-print(myStack.get_stack())
-myStack.push("ZVM")
-print(myStack.get_stack())
-myStack.pop()
-print(myStack.get_stack())
-print(myStack.peek())
+if __name__ == "__main__":
+    myStack = Stack()
+    myStack.push("CEA")
+    myStack.push("PLB")
+    print(myStack.get_stack())
+    myStack.push("ZVM")
+    print(myStack.get_stack())
+    myStack.pop()
+    print(myStack.get_stack())
+    print(myStack.peek())
